@@ -1,0 +1,87 @@
+import pyautogui
+import time
+import subprocess
+pyautogui.FAILSAFE = True
+import start_like_PUSK
+
+
+# def start_master(): #запуск программы
+#     cmd = 'C:\MasterM\master.exe'
+#     PIPE = subprocess.PIPE
+#     p = subprocess.Popen(cmd, shell = True)
+#     time.sleep(25) #ждем окно авторизации
+def pause():
+    pyautogui.PAUSE = 0.5
+
+#тест с попыткой входа без ввода пароля
+#start_master()
+pyautogui.moveTo(1000, 560) #Кнопка войти
+pyautogui.click()
+pause()
+pyautogui.moveTo(1030, 480) #Комбобокс Имя пользователя
+pyautogui.click()
+pause()
+pyautogui.moveTo(1030, 530) #operator
+pyautogui.click()
+pause()
+pyautogui.moveTo(1000, 560)
+pyautogui.click()
+pause()
+pyautogui.moveTo(1030, 480) #Комбобокс Имя пользователя
+pyautogui.click()
+pause()
+pyautogui.moveTo(1030, 510) #guest
+pyautogui.click()
+pause()
+pyautogui.moveTo(1000, 560)
+pyautogui.click()
+pause()
+
+# тест с невалидным паролем
+pyautogui.moveTo(1030, 510) #поле Пароль
+pyautogui.click()
+pause()
+pyautogui.typewrite('qwerty', 0.5)
+pyautogui.click(1000, 560, 1, 1, 'left') #click(x, y, clicks, interval, button) кнопка Войти
+pyautogui.moveTo(1030, 480) #Комбобокс Имя пользователя
+pyautogui.click()
+pause()
+pyautogui.moveTo(1030, 530) #operator
+pyautogui.click()
+pause()
+pyautogui.moveTo(1030, 510)
+pyautogui.click()
+pyautogui.hotkey('Ctrl', 'a')
+pyautogui.hotkey('delete')
+pause()
+pyautogui.typewrite('qwerty', 0.5)
+pyautogui.click(1000, 560, 1, 1, 'left') #click(x, y, clicks, interval, button)
+pyautogui.moveTo(1030, 480) #Комбобокс Имя пользователя
+pyautogui.click()
+pause()
+pyautogui.moveTo(1030, 510) #guest
+pyautogui.click()
+pause()
+pyautogui.moveTo(1030, 510)
+pyautogui.click()
+pyautogui.hotkey('Ctrl', 'a')
+pyautogui.hotkey('delete')
+pause()
+pyautogui.typewrite('qwerty', 0.5)
+pyautogui.click(1000, 560, 1, 1, 'left') #click(x, y, clicks, interval, button)
+pyautogui.hotkey('Esc')
+pause()
+
+#закрытие окна авторизации через крестик
+
+pyautogui.moveTo(1150, 445)
+pyautogui.click()
+time.sleep(3)
+
+#закрытие окна авторизации через кнопку "Отменить"
+import start_like_PUSK
+pyautogui.moveTo(1100, 560)
+pyautogui.click()
+time.sleep(3)
+
+

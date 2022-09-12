@@ -23,3 +23,4 @@ import connections_np_network
 import actions_with_map
 import mm_60_check_items_menu
 import mm_426_validator_when_create_user
+import monitoring_tool.mm_325_choose_availables_periods
